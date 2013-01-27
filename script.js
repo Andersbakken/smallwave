@@ -1,18 +1,7 @@
 var fs = require("fs");
 var util = require("util");
 
-var symbols = {
-    "main.cpp": [
-        { "location": { "file": "main.cpp", "offset": 5, "length": 3 },
-          "type": "FunctionDecl" },
-        { "location": { "file": "main.cpp", "offset": 21, "length": 4 },
-          "type": "FunctionDecl" },
-        { "location": { "file": "main.cpp", "offset": 34, "length": 3 },
-          "type": "DeclRefExpr",
-          "target": { "file": "main.cpp", "offset": 5, "length": 3 }
-        },
-    ],
-};
+var symbols = JSON.parse(fs.readFileSync("smallwave-rtags.json").toString());
 
 function onload()
 {
