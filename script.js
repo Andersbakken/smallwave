@@ -19,7 +19,7 @@ function onload()
             out += src.substring(srcIndex, symbol.location.offset).replace(/ /g, "&nbsp;");
             out += "<a id=\"" + symbol.location.offset + "\"";
             if (symbol.target) {
-                out += " href=\"" + symbol.target.file + ".html#" + symbol.target.offset + "\"";
+                out += " href=\"" + (symbol.target.file ? symbol.target.file + ".html#" : "#") + symbol.target.offset + "\"";
             }
             out += ">";
             out += src.substr(symbol.location.offset, symbol.location.length).replace(/ /g, "&nbsp;");
